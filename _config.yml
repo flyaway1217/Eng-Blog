@@ -68,4 +68,51 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: flyaway@104.236.134.157:/home/flyaway/overflow-zhou
+
+avatar: /images/big-uncle.jpg
+
+
+math:
+    engine: 'mathjax' # or 'katex'
+    mathjax: {
+        src: "//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML",
+        config: {
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        },
+        TeX: {
+                equationNumbers: {
+                autoNumber: "AMS"
+                }
+            }
+        }
+    }
+    src: custom_mathjax_source
+    config:
+
+markdown:
+    render:
+    html: true
+    xhtmlOut: false
+    breaks: false
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+    plugins:
+        - markdown-it-abbr
+        - markdown-it-footnote
+        - markdown-it-ins
+        - markdown-it-sub
+        - markdown-it-sup
+    anchors:
+        level: 1
+        collisionSuffix: 'v'
+        permalink: false
+        permalinkClass: header-anchor
+        permalinkSymbol:
+
+
